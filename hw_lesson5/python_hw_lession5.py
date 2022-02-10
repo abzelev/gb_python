@@ -31,8 +31,8 @@ f.close()
 # task 4
 my_dict = {1: 'Один', 2: 'Два', 3: 'Три', 4: 'Четыре'}
 
-f = open('files_for_hw_5/file4.txt', 'r', encoding='utf-8')
-f2 = open('files_for_hw_5/file4_new.txt', 'w', encoding='utf-8')
+f = open('../files_for_hw_5/file4.txt', 'r', encoding='utf-8')
+f2 = open('../files_for_hw_5/file4_new.txt', 'w', encoding='utf-8')
 for i in f.readlines():
     temp = i.split()
     print(my_dict.get(int(temp[2])) + temp[1] + temp[2])
@@ -44,11 +44,11 @@ f2.close()
 # task 5
 from random import randint
 
-with open('files_for_hw_5/file5.txt', 'w', encoding='utf-8') as f:
+with open('../files_for_hw_5/file5.txt', 'w', encoding='utf-8') as f:
     for _ in range(10):
         f.write(str(randint(0, 10))+' ')
 
-with open('files_for_hw_5/file5.txt', 'r', encoding='utf-8') as f1:
+with open('../files_for_hw_5/file5.txt', 'r', encoding='utf-8') as f1:
     sm = 0
     ls = f1.readline().split()
     print(ls)
@@ -58,7 +58,7 @@ with open('files_for_hw_5/file5.txt', 'r', encoding='utf-8') as f1:
 
 # task 6
 my_dict = {}
-with open('files_for_hw_5/file6.txt', 'r', encoding='utf-8') as f:
+with open('../files_for_hw_5/file6.txt', 'r', encoding='utf-8') as f:
     for i in f.readlines():
         temp = i.split()
         lecture = temp[0]
@@ -77,7 +77,7 @@ dict_profit = {}
 dict_avg = {}
 avg_profit = 0
 cnt = 0
-with open('files_for_hw_5/file7.txt', 'r', encoding='utf-8') as f:
+with open('../files_for_hw_5/file7.txt', 'r', encoding='utf-8') as f:
     for i in f.readlines():
         firm_name = i.split()[0]
         profit = float(i.split()[2]) - float(i.split()[3])
@@ -87,4 +87,4 @@ with open('files_for_hw_5/file7.txt', 'r', encoding='utf-8') as f:
         dict_profit.__setitem__(firm_name, profit)
     dict_avg.__setitem__("avg_profit", avg_profit / cnt)
 ls = [dict_profit, dict_avg]
-print(ls, file=open("files_for_hw_5/file7.json", 'w', encoding='utf-8'))
+print(ls, file=open("../files_for_hw_5/file7.json", 'w', encoding='utf-8'))
